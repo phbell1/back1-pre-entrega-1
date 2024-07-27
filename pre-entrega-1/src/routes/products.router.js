@@ -28,6 +28,21 @@ router.post("/", async (req, res) => {
     res.send("Producto Agregado Con Exito");
 })
 
+router.put("/:pid", async (req, res) => {
+    let id = req.params.pid;
+    const prodUpdate = req.body;
+    await manager.updateProduct(parseInt(id),prodUpdate);
+    res.send("Producto Modificado Exitosamente");
+})
+
+router.delete("/:pid", async (req, res) => {
+    let id = req.params.pid;
+    await manager.deleteProduct(parseInt(id));
+    res.send("Producto Eliminado Exitosamente");
+})
+
+
+
 
 
 

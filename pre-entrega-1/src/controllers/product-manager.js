@@ -54,17 +54,6 @@ class ProductManager {
         }
     }
 
-
-    async leerArchivo() {
-        const respuesta = await fs.readFile(this.path, "utf-8");
-        const arrayProductos = JSON.parse(respuesta);
-        return arrayProductos;
-    }
-
-    async guardarArchivo(arrayProductos) {
-        await fs.writeFile(this.path, JSON.stringify(arrayProductos, null, 2));
-    }
-
     async updateProduct(id, prodUpdate) {
         const arrayProductos = await this.leerArchivo();
         const index = arrayProductos.findIndex(item => item.id === id);
@@ -90,6 +79,18 @@ class ProductManager {
 
 
     }
+
+
+    async leerArchivo() {
+        const respuesta = await fs.readFile(this.path, "utf-8");
+        const arrayProductos = JSON.parse(respuesta);
+        return arrayProductos;
+    }
+
+    async guardarArchivo(arrayProductos) {
+        await fs.writeFile(this.path, JSON.stringify(arrayProductos, null, 2));
+    }
+
 
 }
 

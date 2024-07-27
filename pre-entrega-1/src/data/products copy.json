@@ -56,12 +56,12 @@
   },
   {
     "id": 6,
-    "title": "Eugenia Mirtifolia",
-    "description": "Mouse Choto.",
+    "title": "Mouse Gaming",
+    "description": "Mouse ergonómico para gamers con DPI ajustable.",
     "code": "MOU2468",
-    "price": 50000000,
+    "price": 49.99,
     "status": "activo",
-    "stock": 999,
+    "stock": 150,
     "category": "Periféricos",
     "thumbnails": []
   },
@@ -96,39 +96,6 @@
     "status": "activo",
     "stock": 100,
     "category": "Audio",
-    "thumbnails": []
-  },
-  {
-    "id": 10,
-    "title": "Echeveria Elegans",
-    "description": "Es una planta suculenta originaria de México",
-    "code": "INT0001",
-    "price": 1800,
-    "status": true,
-    "stock": 52,
-    "category": "Interior",
-    "thumbnails": []
-  },
-  {
-    "id": 11,
-    "title": "Echeveria Elegans",
-    "description": "Es una planta suculenta originaria de México",
-    "code": "INT0001",
-    "price": 1800,
-    "status": true,
-    "stock": 52,
-    "category": "Interior",
-    "thumbnails": []
-  },
-  {
-    "id": 12,
-    "title": "Maranta",
-    "description": "Es una planta suculenta originaria de México",
-    "code": "INT0001",
-    "price": 5555,
-    "status": true,
-    "stock": 950,
-    "category": "Exterior",
     "thumbnails": []
   }
 ]
