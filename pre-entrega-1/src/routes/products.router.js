@@ -1,18 +1,34 @@
 import { Router } from "express";
+import ProductManager from "../controllers/product-manager.js";
 
 const router = Router();
+const manager = new ProductManager("./src/data/products.json")
 
-const products = [];
 
-router.get("/", (req, res) => {
-    res.send(products);
+router.get("/", async (req, res) => {
+    const arrayProductos = await manager.getProducts();
+    res.send(arrayProductos);
+
 });
 
-router.post("/", (req, res) => {
-    const newProduct = req.body;
-    products.push(newProduct);
-    res.send({status: "success", message:"Producto Agregado Exitosamente"});
-}) 
+router.get("/:pid", async (req, res) => {
+    let id = req.params.pid;
+
+    const producto = await manager.getProductsbyId(parseInt(id));
+    if (!producto) {
+        res.send("Producto Inexistente")
+    } else {
+        res.send(producto);
+    }
+})
+
+router.post("/", async (req, res) => {
+    const nuevoProducto = req.body;
+    await manager.addProduct(nuevoProducto);
+    res.send("Producto Agregado Con Exito");
+})
+
+
 
 
 export default router;
